@@ -136,7 +136,8 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
 */
 function processContains(item, list, callback) {
-  return callback(list.includes[item]);
+  let bool = list.includes(item);
+  return callback(bool);
 }
 
 /**
@@ -297,9 +298,8 @@ function counterMakerWithLimit(number) {
       count++;
       return count;
       };
-    }
-  else (){
-    return count = 0;
+    } else if (count === number){
+    return count = -1;
   };
 }
 
