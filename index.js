@@ -159,7 +159,7 @@ function processContains(item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+function processDuplicateFree(list, callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
 }
 
@@ -291,16 +291,16 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(number) {
+function counterMakerWithLimit(limit) {
+  let control = limit;
   let count = -1;
-    if(count < number){
-      return function counter() {
-      count++;
-      return count;
-      };
-    } else if (count === number){
-    return count = -1;
-  };
+  return function counter(){
+    if (count === control){
+      count = -1;
+    }
+    return ++count;
+  }
+  return counter;
 }
 
 /////////////// END OF CHALLENGE ///////////////
